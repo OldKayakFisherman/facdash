@@ -1,16 +1,22 @@
-# This is a sample Python script.
+from facimport import *
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+def import_data():
+    logging.basicConfig(level=logging.DEBUG)
+    import_general()
+    import_cfda()
+    import_findings()
+    import_cpas()
+    import_agencies()
+    import_eins()
+    import_duns()
+    import_captext()
+    import_findingstext()
+    import_notes()
+    import_passthroughs()
+    import_revisions()
+    import_ueis()
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('PyCharm')
+    import_data()
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
