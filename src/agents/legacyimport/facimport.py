@@ -22,7 +22,7 @@ def import_general():
 def import_cfda():
 
     settings = ImportSettings()
-    process_name = 'cfda'
+    process_name = 'cfdas'
 
     if settings.import_cfda:
         log_process_clean(process_name)
