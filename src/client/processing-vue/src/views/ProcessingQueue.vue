@@ -1,7 +1,7 @@
 <script>
 import {VDataTable} from "vuetify/labs/components";
-import axios from "axios";
 import APIService from '../services/APIService'
+import TableHeaderService from '../services/TableHeaderService'
 
 
 
@@ -32,50 +32,6 @@ export default {
       })
        */
     },
-    populateTableHeaders(){
-      this.tableHeaders = [
-        {
-          title: 'Report Id',
-          sortable: true,
-          key: 'report_id'
-        },
-        {
-          title: 'Audit Year',
-          sortable: true,
-          value: 'audit_year'
-        },
-        {
-          title: 'Db Key',
-          sortable: true,
-          value: 'dbkey'
-        },
-        {
-          title: 'Auditee Name',
-          sortable: true,
-          value: 'auditee_name'
-        },
-        {
-          title: 'City',
-          sortable: true,
-          value: 'city'
-        },
-        {
-          title: 'State',
-          sortable: true,
-          value: 'state'
-        },
-        {
-          title: 'SFlag',
-          sortable: true,
-          value: 'sflag'
-        },
-        {
-          title: 'Date Received',
-          sortable: true,
-          value: 'date_received'
-        },
-      ];
-    },
     handleClick(value)
     {
       const targetReport = value.target.parentNode.children[0].innerHTML;
@@ -84,7 +40,8 @@ export default {
   },
   beforeMount() {
     this.getQueueRecords();
-    this.populateTableHeaders();
+    this.tableHeaders = new TableHeaderService().populateTableHeaders()
+
   }
 }
 

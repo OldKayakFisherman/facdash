@@ -21,7 +21,9 @@ export default {
     },
     async doEINSearch(){
       let apiService = new APIService(this.base_url);
-        
+      let ein = this.workflowItem.ein;
+
+      this.einSearchRecords = await apiService.getEINSearchRecords(ein);
     }
 
   },
@@ -88,11 +90,11 @@ export default {
 
   <div class="row row-cols-lg-auto g-3 align-items-center">
     <div class="col">
-      <span for="txtSearchName" class="audit_info_label">Name:</span>
+      <span class="audit_info_label">Name:</span>
         <input id="txtSearchName" type="text" class="ms-2" placeholder="Name" />
     </div>
     <div class="col">
-      <span for="txtSearchDbKey" class="audit_info_label">DbKey:</span>
+      <span  class="audit_info_label">DbKey:</span>
         <input id="txtSearchDbKey" type="text" class="ms-2" placeholder="DbKey" />
     </div>
     <div class="col">
