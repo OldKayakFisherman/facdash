@@ -19,4 +19,4 @@ def home():
 
 @app.get("/health")
 def health_check():
-    return HealthCheck().check()
+    return HealthCheck.check()
